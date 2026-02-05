@@ -1,72 +1,96 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Retail Sales Data Analysis
 
-## Template Instructions
+## Project Overview
+This project explores a retail sales dataset to identify patterns in weekly sales and understand how sales vary across stores, departments, store types, holiday periods, and promotional markdowns. The analysis is presented in a Jupyter Notebook and uses exploratory data analysis (EDA) techniques to summarise the data and highlight key insights.
 
-Welcome,
+## Business Objectives
+The objectives of this analysis are to:
+- Understand the distribution and variation of weekly sales
+- Compare sales performance across stores and departments
+- Identify whether holiday weeks impact weekly sales
+- Explore the relationship between promotional markdowns and weekly sales
+- Compare average weekly sales across store types
+- Visualise overall weekly sales trends over time
 
-This is the Code Institute student template for the Data Analytics capstone project. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+## Analytical Questions
+This analysis seeks to answer the following questions:
+- How do weekly sales vary across different stores and departments?
+- Are there observable differences in weekly sales during holiday and non-holiday periods?
+- Do promotional markdowns have a noticeable relationship with weekly sales?
+- How do average weekly sales compare across different store types?
+- What trends or fluctuations are visible in total weekly sales over time?
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
 
-## How to use this repo
+## Dataset
+Source: Kaggle Retail Dataset by Manjeet Singh  
+Kaggle link: https://www.kaggle.com/datasets/manjeetsingh/retaildataset
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+The dataset contains multiple files (for example, sales, stores, and features) and includes fields such as:
+- Store
+- Dept
+- Date
+- Weekly_Sales
+- IsHoliday
+- Store Type and Size
+- MarkDown variables (MarkDown1 to MarkDown5)
 
-1. Copy the URL of your repository to your clipboard.
+## Tools and Technologies Used
+- Python
+- Pandas
+- Matplotlib
+- Jupyter Notebook (VS Code)
+- Git and GitHub
 
-1. In VS Code, select **File** -> **Open Folder**.
+## Project Structure
+Typical structure in this repository:
+- `jupyter_notebooks/`
+  - `retail_sales_analysis.ipynb`
+- `data/`
+  - dataset CSV files used in the analysis
+- `README.md`
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
+## Methodology
+The analysis was conducted using a structured exploratory data analysis approach. The datasets were first loaded and inspected to understand their structure, data types, and completeness. Data cleaning steps were applied to handle missing values and ensure consistency across datasets. Descriptive statistics and grouped summaries were then used to compare weekly sales across stores, departments, store types, and holiday periods. Visualisations were created to examine overall sales trends over time and to support interpretation of key patterns observed in the data.
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open the terminal.
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+## Key Analysis Steps
+The notebook includes the following analysis steps:
+- Initial data exploration (shape, columns, missing values, sample rows)
+- Descriptive statistics for weekly sales
+- Average weekly sales by store
+- Average weekly sales by department
+- Total weekly sales trend over time (line chart)
+- Holiday vs non holiday weekly sales comparison
+- Correlation between total markdowns and weekly sales
+- Average weekly sales by store type
 
-1. In VS Code, select **File** > **Open Folder** again.
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
+## Key Findings Summary
+The analysis revealed substantial variation in weekly sales across stores and departments, indicating differences in performance and customer demand. Holiday weeks were associated with higher average weekly sales compared to non-holiday periods. Total weekly sales over time showed noticeable fluctuations, with certain periods experiencing significant increases. The correlation analysis indicated a very weak relationship between promotional markdowns and weekly sales, suggesting that markdowns alone do not strongly drive sales changes. Among store types, type A recorded the highest average weekly sales, followed by types B and C.
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate from each other. You need to create your virtual environment, also called a venv, and then ensure that it is activated any time you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
+## How to Run This Project Locally
+1. Clone the repository from GitHub
+2. Open the project folder in VS Code
+3. Ensure you have Python installed and select a Python environment
+4. Install dependencies if required (for example: pandas and matplotlib)
+5. Open and run the notebook:
+   - `jupyter_notebooks/retail_sales_analysis.ipynb`
 
-1. Choose **Venv** from the dropdown list.
+## Deployment
+This project is submitted with:
+- A GitHub repository link (source code)
+- A live deployed link (as required by the submission procedure)
 
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
+Deployment can be completed using a platform such as Heroku by connecting the GitHub repository and deploying the selected branch. The repository should include any required deployment files based on the platform used.
 
-1. **DO NOT** click the box next to `requirements.txt`, as you need to do more steps before you can install your dependencies. Click **OK**.
+## Use of AI Tools
+ChatGPT was used during the development of this project to support learning and productivity. This included:
+- Clarifying Python and pandas concepts
+- Debugging errors and improving code structure
+- Drafting and refining README documentation and markdown explanations in the notebook
 
-1. You will see a `.venv` folder appear in the file explorer pane to show that the virtual environment has been created.
+All final decisions, edits, and validation of results were reviewed by the author to ensure the analysis reflects the outputs produced in the notebook.
 
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
-
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
-
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
-
- ```console
- pip3 install -r requirements.txt
- ```
-
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
-
-1. Click the **kernel** button and choose **Python Environments**.
-
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
-
-```console
-! python --version
-```
-
-## Deployment Reminders
-
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version that closest matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
+## Author
+Adenike Adeyanju
